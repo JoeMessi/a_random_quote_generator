@@ -59,7 +59,7 @@ var quotes = [
    source: "H. Jackson Brown, Jr."}
 ];
 
-console.log(quotes);
+
 
 /***
   Create the `getRandomQuote` function to:
@@ -67,8 +67,11 @@ console.log(quotes);
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
 
-
-
+function getRandomQuote(array){
+  var randomNum = Math.floor(Math.random()*10);
+  var myObj = array[randomNum];
+  return myObj;
+}
 
 /***
   Create the `printQuote` function to:
@@ -83,6 +86,52 @@ console.log(quotes);
    - Set the `innerHTML` of the `quote-box` div to the HTML string.
 ***/
 
+function printQuote() {
+  var myObj = getRandomQuote(quotes);
+  var html = '';
+  var myDiv;
+
+  html += "<p class='quote'>" + myObj.quote + "</p>" +
+          "<p class='source'>" + myObj.source
+
+          if(myObj.hasOwnProperty('citation')) {
+            html += "<span class='citation'>" + myObj.citation + "</span>";
+          }
+          if(myObj.hasOwnProperty('year')) {
+            html += "<span class='year'>" + myObj.year + "</span>";
+          }
+          + "</p>";
+
+  myDiv = document.getElementById('quote-box');
+  myDiv.innerHTML = html;
+
+
+}
+
+
+
+function getRandomRgb() {
+  return Math.floor(Math.random() * 256);
+}
+
+
+function buildColor() {
+    var output = 'rgb(';
+
+  output += getRandomRgb() + ',';
+  output += getRandomRgb() + ',';
+  output += getRandomRgb() + ')';
+
+  return output;
+}
+
+
+
+function changeBg() {
+  var myBody = document.getElementsByTagName('BODY')[0];
+  myBody.style.backgroundColor = buildColor();
+
+}
 
 
 
@@ -94,6 +143,10 @@ console.log(quotes);
 ***/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+// maybe a better way to make those 2 into one addEventListener ???
+
+document.getElementById('loadQuote').addEventListener("click", changeBg, false);
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
