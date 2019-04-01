@@ -134,7 +134,6 @@ function changeBg() {
 }
 
 
-
 /***
   When the "Show another quote" button is clicked, the event listener
   below will be triggered, and it will call, or "invoke", the `printQuote`
@@ -143,10 +142,11 @@ function changeBg() {
 ***/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", changeBg, false);
 
 // maybe a better way to make those 2 into one addEventListener ???
 
-document.getElementById('loadQuote').addEventListener("click", changeBg, false);
-
+window.setInterval(printQuote, 20000);
+window.setInterval(changeBg, 20000);
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
