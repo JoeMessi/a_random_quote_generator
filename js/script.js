@@ -20,7 +20,8 @@ var quotes = [
   {quote: "So many books, so little time.",
    source: "Frank Zappa",
    citation: "Woodstock",
-   year: 1969
+   year: 1969,
+   category: 'Reading'
   },
   {quote: "Get busy living or get busy dying",
    source: "Stephen King"
@@ -28,18 +29,21 @@ var quotes = [
   {quote: "Love all, trust a few, do wrong to none.",
    source: "William Shakespeare",
    citation: "All's Well That Ends Well",
-   year: 1623
+   year: 1623,
+   category: 'Inspirational'
   },
   {quote: "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
    source: "Eleanor Roosevelt"
   },
   {quote: "Those who dare to fail miserably can achieve greatly.",
-   source: "John F. Kennedy"
+   source: "John F. Kennedy",
+   category: 'Motivational'
   },
   {quote: "It does not do to dwell on dreams and forget to live.",
    source: "J.K. Rowling",
    citation: "Harry Potter and the Sorcerer's Stone",
-   year: 1997
+   year: 1997,
+   category: 'Reading'
 
   },
   {quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
@@ -50,13 +54,15 @@ var quotes = [
   {quote: "Be the change that you wish to see in the world.",
    source: "Mahatma Gandhi",
    citation: "Indian National Congress",
-   year: 1922
+   year: 1922,
+   category: 'Freedom'
   },
   {quote: "It had long since come to my attention that people of accomplishment rarely sat back and le things happen to them. They went out and happened to things",
    source: "Leonardo Da Vinci"
   },
   {quote: "Remember that the happiest people are not those getting more, but those giving more",
-   source: "H. Jackson Brown, Jr."}
+   source: "H. Jackson Brown, Jr.",
+   category: 'Inspirational'}
 ];
 
 
@@ -99,6 +105,9 @@ function printQuote() {
           }
           if(myObj.hasOwnProperty('year')) {
             html += "<span class='year'>" + myObj.year + "</span>";
+          }
+          if(myObj.hasOwnProperty('category')) {
+            html += "<br><span>" + myObj.category + "</span>";
           }
           + "</p>";
 
