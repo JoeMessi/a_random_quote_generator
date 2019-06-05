@@ -150,5 +150,5 @@ document.getElementById('loadQuote').addEventListener("click", changeBg, false);
 // These last 2 lines make sure that the 'printQuote' and 'changeBg' functions
 // will be called every 20 seconds
 
-window.setInterval(printQuote, 20000);
-window.setInterval(changeBg, 20000);
+// window.setInterval(printQuote, 20000);
+// window.setInterval(changeBg, 20000);
